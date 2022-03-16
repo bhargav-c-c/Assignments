@@ -15,8 +15,11 @@ public class StudentTest {
 			arrayList.add(new Student(501, "Robert", 21, 90, "New York"));
 			arrayList.add(new Student(901, "Charlie", 19, 56, "New Jersey"));
 			arrayList.add(new Student(801, "Bhargav", 23, 99, "Dubai"));
-
+			boolean flag = true;
 			Scanner sc = new Scanner(System.in);
+
+			System.out.println("Please Select anyone sorting option from below");
+			System.out.println("_______________________________________________");
 			System.out.println("Press 1 to Sort by Roll number");
 			System.out.println("Press 2 to Sort by Name");
 			System.out.println("Press 3 to Sort by Age");
@@ -72,30 +75,37 @@ public class StudentTest {
 				System.out.println();
 				continue;
 			}
-			Scanner sc1 = new Scanner(System.in);
-			System.out.println();
-			System.out.println("For resortinig type 'YES'");
-			System.out.println("To exit type 'NO'");
-			System.out.println();
-			String s = sc1.next();
-			if (s.equalsIgnoreCase("YES")) {
+			while (flag) {
+				Scanner sc1 = new Scanner(System.in);
+				System.out.println();
+				System.out.println("For resorting type 'YES'");
+				System.out.println("To exit type 'NO'");
+				System.out.println();
+				String s = sc1.next();
 
-			} else if (s.equalsIgnoreCase("NO")) {
+				if (s.equalsIgnoreCase("YES")) {
 
-				temp = false;
-				System.out.println();
-				System.out.println("Program Terminated. Thank you!!!");
-				System.out.println();
+					flag = false;
 
-			} else {
-				System.out.println();
-				System.out.println("Error!!! : Please type 'YES' or 'NO'");
-				System.out.println();
+				} else if (s.equalsIgnoreCase("NO")) {
+					flag = false;
+					temp = false;
+
+					System.out.println();
+					System.out.println("Program Terminated. Thank you!!!");
+					System.out.println();
+
+				} else {
+					System.out.println();
+					System.out.println("Error!!! : Please type 'YES' or 'NO'");
+					System.out.println();
+					flag = true;
+
+				}
 
 			}
 
 		}
 
 	}
-
 }
